@@ -1,5 +1,5 @@
 export const getAllArtworks = async (req, res) => {
-    return res.send(
+    return res.status(200).send(
         {
             success : true,
             message : 'All artworks fetched successfully',
@@ -9,7 +9,6 @@ export const getAllArtworks = async (req, res) => {
         }
     )
 }
-
 export const getArtwork = async(req, res, next) => {
     try{
         res.send("Your artwork's ID is ", req.params.id);
@@ -17,4 +16,10 @@ export const getArtwork = async(req, res, next) => {
     catch(error){
         next(error);
     }
+}
+
+export const addNewArtwork = async(req, res, next) => {
+    res.status(200).send({
+        success : true,
+    })
 }
