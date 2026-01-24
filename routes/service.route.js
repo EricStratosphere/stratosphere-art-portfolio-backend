@@ -1,26 +1,22 @@
 import { Router } from 'express';
-
+import { addNewService, getAllServices, updateService, deleteService } from '../controllers/service.controller.js';
 const serviceRouter = Router();
 
 
 //getAllServices
-serviceRouter.get('/', (req, res, next) => {
-    
-})
+serviceRouter.get('/', getAllServices)
 
 
 //addNewService
-serviceRouter.post('/');
+serviceRouter.post('/', addNewService);
 
 
 //updateService
 
-serviceRouter.put('/:id');
+serviceRouter.put('/:id', updateService);
 
 
 //deleteService
 
-serviceRouter.delete('/:id', ()=>{
-    
-})
+serviceRouter.delete('/:id', deleteService);
 
