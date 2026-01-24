@@ -9,6 +9,7 @@ export const getAllArtworks = async (req, res) => {
         }
     )
 }
+
 export const getArtwork = async(req, res, next) => {
     try{
         res.send("Your artwork's ID is ", req.params.id);
@@ -22,4 +23,16 @@ export const addNewArtwork = async(req, res, next) => {
     res.status(200).send({
         success : true,
     })
+}
+
+export const updateArtwork = async(req, res, next) => {
+    res.status(200).send(
+        {
+            success:true,
+        }
+    )
+}
+
+export const deleteArtwork = async(req, res, next) => {
+    res.send("Artwork deleted!");
 }
