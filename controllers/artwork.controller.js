@@ -34,5 +34,5 @@ export const updateArtwork = async(req, res, next) => {
 }
 
 export const deleteArtwork = async(req, res, next) => {
-    res.send("Artwork deleted!");
+    res.status(200).send("Artwork deleted!");
 }
