@@ -1,15 +1,16 @@
 import { Router } from "express";
+import { getAllSocials, addNewSocial, editSocial, deleteSocials } from "../controllers/socials.controller";
 const socialsRouter = Router();
 
 //getAllSocials
-socialsRouter.get('/', );
+socialsRouter.get('/', getAllSocials);
 
 //addNewSocial
-socialsRouter.post('/');
+socialsRouter.post('/', addNewSocial);
 
 //editSocial
-socialsRouter.put('/:socialsName', );
+socialsRouter.put('/:socialsName', editSocial);
 
 //deleteSocials
 
-socialsRouter.put('/:socialsName', );
+socialsRouter.delete('/:socialsName', deleteSocials);
