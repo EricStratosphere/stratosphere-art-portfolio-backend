@@ -1,5 +1,5 @@
 import { Router } from "express"; 
-import { editMainPageDescription, editMainPageIntroduction, editProfilePicture } from "../controllers/mainpage.controller";
+import { editMainPageDescription, editMainPageIntroduction, editProfilePicture } from "../controllers/mainpage.controller.js";
 const mainPageRouter = Router();
 
 //editMainPageDescription
