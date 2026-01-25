@@ -20,3 +20,4 @@ serviceRouter.put('/:id', updateService);
 
 serviceRouter.delete('/:id', deleteService);
 
+export default serviceRouter;

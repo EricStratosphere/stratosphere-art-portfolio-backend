@@ -17,7 +17,7 @@ export const addNewService = (req, res, next) => {
 export const updateService = (req, res, next) => {
     res.status(200).send(
         {
-            message : "Successfully edited service.",
+            message : ("Successfully edited service." + req.params.id),
         }
     )
 }

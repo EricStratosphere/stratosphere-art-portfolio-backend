@@ -1,19 +1,22 @@
 import { Router } from "express";
+import { addExperience, deleteExperience, editExperience, getAllExperiences } from "../controllers/experience.controller.js";
 
 const experienceRouter = Router();
 
 //addExperience
 
-experienceRouter.post('/',);
+experienceRouter.post('/', addExperience);
 
 //getAllExperiences
 
-experienceRouter.get('/',);
+experienceRouter.get('/', getAllExperiences);
 
 //editExperience
 
-experienceRouter.post('/:id');
+experienceRouter.post('/:id', editExperience);
 
 //deleteExperience
 
-experienceRouter.delete('/:id');
+experienceRouter.delete('/:id', deleteExperience);
+
+export default experienceRouter;
