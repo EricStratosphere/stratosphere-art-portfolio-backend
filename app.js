@@ -5,7 +5,7 @@ import serviceRouter from './routes/service.route.js';
 import experienceRouter from './routes/education-experience.route.js';
 import mainPageRouter from './routes/mainpage.route.js';
 import socialsRouter from './routes/socials.route.js';
-import { PORT } from './config/env.js';
+import { PORT, MONGODB_URI } from './config/env.js';
 
 const app = express();
 
@@ -25,5 +25,4 @@ app.get('/', (req, res)=> {
 app.listen(PORT, async()=>{
     console.log(`Stratosphere\'s art backend running on http://localhost:${PORT}`);
 });
-
 export default app;
