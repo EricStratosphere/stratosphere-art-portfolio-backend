@@ -5,6 +5,7 @@ import serviceRouter from './routes/service.route.js';
 import experienceRouter from './routes/education-experience.route.js';
 import mainPageRouter from './routes/mainpage.route.js';
 import socialsRouter from './routes/socials.route.js';
+import { PORT } from './config/env.js';
 
 const app = express();
 
@@ -21,8 +22,8 @@ app.get('/', (req, res)=> {
     return res.send('Welcome to the stratosphere art backend!');
 });
 
-app.listen(5500, async()=>{
-    console.log('Stratosphere\'s art backend running on http://localhost:5500');
+app.listen(PORT, async()=>{
+    console.log(`Stratosphere\'s art backend running on http://localhost:${PORT}`);
 });
 
 export default app;
