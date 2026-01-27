@@ -16,7 +16,8 @@ const artworkSchema = new mongoose.Schema(
             validate : {
                 validator : (value) => { return value <= new Date()},
                 message : 'Start date must be in the past!'
-            }
+            },
+            default : new Date(),
         },
         
         project_type : {

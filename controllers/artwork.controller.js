@@ -1,3 +1,4 @@
+import Artwork from "../models/artwork.model.js";
 export const getAllArtworks = async (req, res) => {
     return res.status(200).send(
         {
@@ -23,9 +24,20 @@ export const getArtwork = async(req, res, next) => {
 }
 
 export const addNewArtwork = async(req, res, next) => {
-    res.status(200).send({
-        success : true,
-    })
+    try{
+        const artwork = await Artwork.create(
+            {...req.body}
+        )
+        res.status(201).json(
+            {
+                success : true,
+                data : artwork,
+            }
+        )
+    }
+    catch(error){
+        next(error);
+    }
 }
 
 export const updateArtwork = async(req, res, next) => {
