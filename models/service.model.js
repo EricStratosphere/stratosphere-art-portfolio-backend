@@ -20,9 +20,24 @@ const serviceSchema = new mongoose.Schema(
                 type : mongoose.Schema.Types.ObjectId,
                 ref : 'Artwork',
                 required : false,
+                index : true,
+            }
+        ],
+
+        service_description : {
+            type : String,
+            required : [true, 'Please define an artwork description.'],
+            minLength : 2,
+            maxLength : 500,   
+        },
+
+        subservices : [
+            {
+                type : String,
+                required : false,
+                maxLength : 30,
             }
         ]
-
     }
 )
 
