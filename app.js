@@ -25,6 +25,8 @@ app.get('/', (req, res)=> {
 
 app.listen(PORT, async()=>{
     console.log(`Stratosphere\'s art backend running on http://localhost:${PORT}`);
+    // console.log(MONGODB_URI);
     connectDB();
 });
+
 export default app;
