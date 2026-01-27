@@ -7,6 +7,6 @@ mainPageRouter.put('/description', editMainPageDescription);
 //editMainPageIntroduction
 mainPageRouter.put('/introduction', editMainPageIntroduction);
 //editProfilePicture
-mainPageRouter.put('/introduction', editProfilePicture);
+mainPageRouter.put('/pfp', editProfilePicture);
 
 export default mainPageRouter;

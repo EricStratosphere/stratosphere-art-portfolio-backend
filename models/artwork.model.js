@@ -24,17 +24,20 @@ const artworkSchema = new mongoose.Schema(
             enum : ['Personal Project', 'Commission'],
             required : true
         },
+
         links : [
             {
                 type : String,
                 required : false,
             }
         ],
+
         medium : {
             type : String,
             required : [true, 'Please specify an artwork medium.'],
             minLength : 1,
         },
+        
         description : {
             type : String,
             required : [true, 'Please specify a description!'],
@@ -43,3 +46,7 @@ const artworkSchema = new mongoose.Schema(
         }
     }
 )
+
+const Artwork = mongoose.model("Artwork", artworkSchema);
+
+export default Artwork;

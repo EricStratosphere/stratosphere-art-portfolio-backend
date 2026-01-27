@@ -12,7 +12,10 @@ export const getAllArtworks = async (req, res) => {
 
 export const getArtwork = async(req, res, next) => {
     try{
-        res.send("Your artwork's ID is ", req.params.id);
+        res.send({
+            success : true,
+            message : "Your artwork's ID is " + req.params.id,
+        });
     }
     catch(error){
         next(error);
