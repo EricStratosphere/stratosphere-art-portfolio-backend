@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { addNewService, getAllServices, updateService, deleteService } from '../controllers/service.controller.js';
+import { addNewService, getService, getAllServices, updateService, deleteService } from '../controllers/service.controller.js';
 const serviceRouter = Router();
 
 
@@ -15,6 +15,9 @@ serviceRouter.post('/', addNewService);
 
 serviceRouter.put('/:id', updateService);
 
+
+//getService
+serviceRouter.get('/:id', getService)
 
 //deleteService
 

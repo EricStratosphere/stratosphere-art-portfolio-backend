@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getAllSocials, addNewSocial, editSocial, deleteSocials }from "../controllers/socials.controller.js";
+import { getAllSocials, addNewSocial, deleteSocials }from "../controllers/socials.controller.js";
 const socialsRouter = Router();
 
 //getAllSocials
@@ -9,12 +9,9 @@ socialsRouter.get('/', getAllSocials);
 
 socialsRouter.post('/', addNewSocial);
 
-//editSocial
-
-socialsRouter.put('/:socialsName', editSocial);
 
 //deleteSocials
 
-socialsRouter.delete('/:socialsName', deleteSocials);
+socialsRouter.delete('/:id', deleteSocials);
 
 export default socialsRouter;
