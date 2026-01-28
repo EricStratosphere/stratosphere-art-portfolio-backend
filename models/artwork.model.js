@@ -6,6 +6,7 @@ const artworkSchema = new mongoose.Schema(
             type : String,
             required : [true, 'Artwork name is required!'],
             trim : true,
+            unique : true,
             minLength : 1,
             maxLength : 200, 
         },
@@ -16,7 +17,8 @@ const artworkSchema = new mongoose.Schema(
             validate : {
                 validator : (value) => { return value <= new Date()},
                 message : 'Start date must be in the past!'
-            }
+            },
+            default : new Date(),
         },
         
         project_type : {

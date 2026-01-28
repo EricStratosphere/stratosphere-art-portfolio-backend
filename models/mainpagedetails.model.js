@@ -17,6 +17,6 @@ const mainPageDetailsSchema = mongoose.Schema(
     }
 )
 
-const MainPageDetails = mongoose.model("MainPageDetails", mainPageDetailsSchema); 
+const MainPageDetails = mongoose.model("MainPageDetail", mainPageDetailsSchema); 
 
 export default MainPageDetails;
