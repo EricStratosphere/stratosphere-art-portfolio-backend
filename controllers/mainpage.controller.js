@@ -15,7 +15,6 @@ export const getData = async (req, res, next) => {
                 data : data,
             }
         )
-        
     }
     catch(error){
         next(error);

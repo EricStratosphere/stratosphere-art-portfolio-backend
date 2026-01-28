@@ -5,19 +5,18 @@ const aboutMeDetailsSchema = mongoose.Schema(
         brief_introduction : {
             type : String,
             required : true,
-            minLength : 10,
-            maxLength : 250,
+            minLength : 2,
+            maxLength : 1000,
         },
-
         long_introduction : {
             type : String,
             required : true,
-            minLength : 10,
-            maxLength : 500,
+            minLength : 2,
+            maxLength : 1500,
         },
     }
 )
 
-const AboutMeDetails = mongoose.model('AboutMeDetails', aboutMeDetailsSchema);
+const AboutMeDetails = mongoose.model('AboutMeDetail', aboutMeDetailsSchema);
 
 export default AboutMeDetails;

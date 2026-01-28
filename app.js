@@ -6,6 +6,7 @@ import experienceRouter from './routes/education-experience.route.js';
 import mainPageRouter from './routes/mainpage.route.js';
 import socialsRouter from './routes/socials.route.js';
 import aboutMeRouter from './routes/aboutmepage.route.js';
+import serviceArtworkRouter from './routes/serviceartwork.route.js';
 import connectDB from './database/mongodb.js';
 import { PORT, MONGODB_URI } from './config/env.js';
 
@@ -21,6 +22,7 @@ app.use('/api/v1/experiences', experienceRouter);
 app.use('/api/v1/mainpage', mainPageRouter);
 app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
+app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
     return res.send('Welcome to the stratosphere art backend!');
 });
