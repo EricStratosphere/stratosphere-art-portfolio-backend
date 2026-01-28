@@ -13,6 +13,10 @@ const mainPageDetailsSchema = mongoose.Schema(
             required : true,
             minLength : 2,
             maxLength : 150,
+        },
+        profile_imgurl : {
+            type : String,
+            required : true,
         }
     }
 )
