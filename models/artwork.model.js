@@ -6,6 +6,7 @@ const artworkSchema = new mongoose.Schema(
             type : String,
             required : [true, 'Artwork name is required!'],
             trim : true,
+            unique : true,
             minLength : 1,
             maxLength : 200, 
         },
