@@ -13,7 +13,7 @@ experienceRouter.get('/', getAllExperiences);
 
 //editExperience
 
-experienceRouter.post('/:id', editExperience);
+experienceRouter.put('/:id', editExperience);
 
 //deleteExperience
 
