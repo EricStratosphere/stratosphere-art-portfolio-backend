@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import ServiceArtwork from "./serviceartwork.model.js";
 const serviceSchema = new mongoose.Schema(
     {
         service_name : {
@@ -31,6 +31,17 @@ const serviceSchema = new mongoose.Schema(
         ]
     }
 )
+/*
+
+artwork_id : 6978e5dda269f668457f6ade
+service_id : 697b37de56b10b4868ef8600
+{
+  "service_name" : "Book Cover Design",
+  "service_img_link" : "serviceimglink",
+  "service_description" : "some description",
+  "subservices" : ["service1", "service2"]
+} 
+*/
 
 const Service = mongoose.model("Service", serviceSchema);
 

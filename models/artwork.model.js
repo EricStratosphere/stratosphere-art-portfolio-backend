@@ -11,6 +11,15 @@ const artworkSchema = new mongoose.Schema(
             maxLength : 200, 
         },
 
+        img_url : {
+            type : String,
+            required : true,
+            trim : true,
+            unique : true,
+            minLength : 1,
+            maxLength : 200, 
+        },
+
         date_created : {
             type : Date,
             required : true,
@@ -20,6 +29,7 @@ const artworkSchema = new mongoose.Schema(
             },
             default : new Date(),
         },
+        
         
         project_type : {
             type : String,

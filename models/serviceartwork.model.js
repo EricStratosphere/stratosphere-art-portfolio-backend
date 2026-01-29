@@ -17,6 +17,7 @@ const serviceArtworkSchema = mongoose.Schema(
     }
 )
 
+
 const ServiceArtwork = mongoose.model('ServiceArtwork', serviceArtworkSchema);
 
 export default ServiceArtwork;

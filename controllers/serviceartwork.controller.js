@@ -19,8 +19,17 @@ export const getAllArtworksInTheService = async (req, res, next)=>{
     try{
         const artworks = [];
         const artworkIdDocs = await ServiceArtwork.find({service_id : req.params.service_id}).select('artwork_id -_id');
+        
+        if(artworkIdDocs.length === 0){
+            res.status(409).send(
+                {
+                    success : false,
+                    message : "This service currently has no artworks."
+                }
+            )
+        }
         for(const artworkIdDoc of artworkIdDocs){
-            const artwork = await Artwork.find({_id : artworkIdDoc.artwork_id});
+            const artwork = await Artwork.findOne({_id : artworkIdDoc.artwork_id});
             artworks.push(artwork);
         }
         res.status(200).json(
