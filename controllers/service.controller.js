@@ -84,9 +84,11 @@ export const updateService = async (req, res, next) => {
             }
         )
     }
+
     catch(error){
         next(error);
     }
+    
 }
 
 export const deleteService = async (req, res, next) => {

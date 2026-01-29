@@ -34,29 +34,14 @@ const serviceSchema = new mongoose.Schema(
 /*
 
 artwork_id : 6978e5dda269f668457f6ade
-service_id : 697b28ef29453a616a79ea21
+service_id : 697b37de56b10b4868ef8600
 {
   "service_name" : "Book Cover Design",
   "service_img_link" : "serviceimglink",
   "service_description" : "some description",
   "subservices" : ["service1", "service2"]
 } 
- */
-serviceSchema.pre('findByIdAndDelete', async function(next){
-    try{
-        const deleted_service_artwork = await ServiceArtwork.deleteMany({service_id : this._id});
-        if(!deleted_service_artwork){
-            const error = new Error('service_artwork not deleted!');
-            error.statusCode = 400;
-            throw error;
-        }
-        next();
-    }
-    catch(error){
-        next(error);
-    }
-});
-
+*/
 
 const Service = mongoose.model("Service", serviceSchema);
 
