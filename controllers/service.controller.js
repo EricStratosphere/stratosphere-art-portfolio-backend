@@ -1,5 +1,5 @@
 import Service from "../models/service.model.js";
-
+import ServiceArtwork from "../models/serviceartwork.model.js";
 export const getAllServices = async (req, res, next) => {
     try{
         const services = await Service.find();
@@ -91,13 +91,16 @@ export const updateService = async (req, res, next) => {
 
 export const deleteService = async (req, res, next) => {
     try{
+        const deleted_service_artwork = await ServiceArtwork.deleteMany({service_id : req.params.id});
         const deletedService = await Service.findByIdAndDelete(req.params.id);
-        res.status(200).json(
-            {
-                success : true,
-                deleted_data : deletedService,
-            }
-        )
+        const responseJSON = {
+            success : true, 
+            deleted_data : deletedService,
+        }
+        if(deleted_service_artwork.deletedCount > 0){
+            responseJSON.deleted_service_artwork = deleted_service_artwork;
+        }
+        res.status(200).json(responseJSON)
     }
     catch(error){
         next(error);
