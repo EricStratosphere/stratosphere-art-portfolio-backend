@@ -60,3 +60,5 @@ typings/
 # .env.*.local
 # next.js build output
 .next
+.vercel
+.env*.local
