@@ -8,7 +8,7 @@ import socialsRouter from './routes/socials.route.js';
 import aboutMeRouter from './routes/aboutmepage.route.js';
 import serviceArtworkRouter from './routes/serviceartwork.route.js';
 import connectDB from './database/mongodb.js';
-import { PORT, MONGODB_URI } from './config/env.js';
+import { PORT} from './config/env.js';
 
 const app = express();
 
