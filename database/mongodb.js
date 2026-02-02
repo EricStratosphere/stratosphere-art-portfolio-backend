@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import { MONGODB_URI } from "../config/env.js";
 
 if(!MONGODB_URI){
-    throw new Error('Please ddefine the MONGODB_URI environment variable');
+    throw new Error('Please define the MONGODB_URI environment variable');
 }
 
 const connectDB = async() => {
