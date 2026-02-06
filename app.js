@@ -24,7 +24,7 @@ app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
 app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
-    return res.send(`Welcome to the stratosphere art backend! ${MONGODB_URI}`);
+    return res.send(`Welcome to the stratosphere art backend!`);
 });
 
 app.listen(PORT, async()=>{
