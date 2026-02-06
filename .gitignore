@@ -61,8 +61,4 @@ typings/
 # next.js build output
 .next
 .vercel
-<<<<<<< HEAD
-.env*.local
-=======
 .env.*.local
->>>>>>> develop

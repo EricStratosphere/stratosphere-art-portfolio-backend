@@ -8,7 +8,7 @@ import socialsRouter from './routes/socials.route.js';
 import aboutMeRouter from './routes/aboutmepage.route.js';
 import serviceArtworkRouter from './routes/serviceartwork.route.js';
 import connectDB from './database/mongodb.js';
-import { PORT} from './config/env.js';
+import { PORT, MONGODB_URI } from './config/env.js';
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
 app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
-    return res.send('Welcome to the stratosphere art backend!');
+    return res.send(`Welcome to the stratosphere art backend! ${MONGODB_URI}`);
 });
 
 app.listen(PORT, async()=>{
