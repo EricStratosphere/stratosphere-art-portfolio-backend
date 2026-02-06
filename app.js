@@ -28,7 +28,7 @@ app.get('/', (req, res)=> {
 });
 
 app.listen(PORT, async()=>{
-    console.log(`Stratosphere\'s art backend running on http://localhost:${PORT}`);
+    console.log(`Stratosphere\'s art backend running on http://localhost:${PORT} ${MONGODB_URI}`);
     // console.log(MONGODB_URI);
     connectDB();
 });
