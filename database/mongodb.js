@@ -8,7 +8,10 @@ if(!MONGODB_URI){
 
 const connectDB = async() => {
     try{
-        await mongoose.connect(MONGODB_URI);
+        await mongoose.connect(MONGODB_URI, {
+            appName : "devrel.vercel.integration",
+            maxIdleTimeMS : 5000
+        });
         
         console.log("Connected to database!");
     }
