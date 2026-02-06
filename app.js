@@ -25,11 +25,11 @@ app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
 app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
-    console.log('test');
     return res.send(`Welcome to the stratosphere art backend!  ${PORT}`);
 });
 
-const port = PORT || 3000;
+//the reason the mongodb connection wasn't working before is because vercel disregards the app.listen function because it uses its own servers to run as oppose to app.listen which turns the machine its running on into its own server. By removing app.listen and calling connectDB() in the top level, we are able to connect our expressjs app to the mongodb atlas clusters successfully without error.
+
 // app.listen(port, async()=>{
 //     console.log(`Stratosphere\'s art backend running on http://localhost:${port}`);
 //     // console.log(MONGODB_URI);
