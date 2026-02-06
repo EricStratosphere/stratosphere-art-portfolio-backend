@@ -24,11 +24,11 @@ app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
 app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
-    return res.send(`Welcome to the stratosphere art backend!`);
+    return res.send(`Welcome to the stratosphere art backend!  ${MONGODB_URI}`);
 });
 
 app.listen(PORT, async()=>{
-    console.log(`Stratosphere\'s art backend running on http://localhost:${PORT} ${MONGODB_URI}`);
+    console.log(`Stratosphere\'s art backend running on http://localhost:${PORT}`);
     // console.log(MONGODB_URI);
     connectDB();
 });
