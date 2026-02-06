@@ -24,14 +24,15 @@ app.use('/api/v1/socials', socialsRouter);
 app.use('/api/v1/aboutmepage', aboutMeRouter);
 app.use('/api/v1/serviceartwork', serviceArtworkRouter);
 app.get('/', (req, res)=> {
+    console.log('test');
     return res.send(`Welcome to the stratosphere art backend!  ${PORT}`);
 });
 
 const port = PORT || 3000;
-app.listen(port, async()=>{
-    console.log(`Stratosphere\'s art backend running on http://localhost:${port}`);
-    // console.log(MONGODB_URI);
-    connectDB();
-});
+// app.listen(port, async()=>{
+//     console.log(`Stratosphere\'s art backend running on http://localhost:${port}`);
+//     // console.log(MONGODB_URI);
+//     return await connectDB();
+// });
 
 export default app;
