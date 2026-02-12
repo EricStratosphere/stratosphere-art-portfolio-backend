@@ -47,7 +47,7 @@ export const getAllArtworksInTheService = async (req, res, next)=>{
 export const addServiceArtwork = async(req, res, next)=>{
     
     try{
-        const checkIfExists = await ServiceArtwork.findOne({service_id : req.params.service_id}, {artwork_id : req.params.artwork_id});
+        const checkIfExists = await ServiceArtwork.findOne({service_id : req.params.service_id, artwork_id : req.params.artwork_id});
         if(checkIfExists){
             res.status(409).json(
                 {
