@@ -49,7 +49,7 @@ export const addServiceArtwork = async(req, res, next)=>{
     try{
         const checkIfExists = await ServiceArtwork.findOne({service_id : req.params.service_id, artwork_id : req.params.artwork_id});
         if(checkIfExists){
-            res.status(409).json(
+            return res.status(409).json(
                 {
                     success : false,
                     message : "Service artwork already exists!",
