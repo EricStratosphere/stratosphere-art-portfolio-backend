@@ -11,9 +11,11 @@ import connectDB from './database/mongodb.js';
 import { PORT, MONGODB_URI } from './config/env.js';
 import cors from 'cors';
 const app = express();
+app.use(cors({
+    origin : true
+}));
 
 connectDB();
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({extended : false}))
